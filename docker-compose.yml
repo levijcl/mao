@@ -1,0 +1,20 @@
+version: "3"
+networks:
+  mao:
+volumes:
+  db_data:
+  shared_data:
+  build:
+services:
+  db:
+    image: postgres:14.1-alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - shared_data:/var/shared
+    networks:
+      - mao
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
