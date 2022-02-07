@@ -1,0 +1,2 @@
+# mao
+A message board
