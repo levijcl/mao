@@ -34,7 +34,7 @@
         excluded: [~r"/_build/", ~r"/deps/", ~r"/node_modules/"]
       },
       #
-     # Load and configure plugins here:
+      # Load and configure plugins here:
       #
       plugins: [],
       #
@@ -187,4 +187,3 @@
     }
   ]
 }
- 
