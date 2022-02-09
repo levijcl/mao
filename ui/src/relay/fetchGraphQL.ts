@@ -1,6 +1,6 @@
-import { Variables } from 'relay-runtime';
+import { Variables } from 'relay-runtime'
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL
 
 async function fetchGraphQL(text: string | null | undefined, variables: Variables) {
   const response = await fetch(`${API_URL}/api`, {
@@ -12,9 +12,9 @@ async function fetchGraphQL(text: string | null | undefined, variables: Variable
       query: text,
       variables,
     }),
-  });
+  })
 
-  return await response.json();
+  return await response.json()
 }
 
-export default fetchGraphQL;
+export default fetchGraphQL
