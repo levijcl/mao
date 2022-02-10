@@ -1,20 +1,16 @@
-import graphql from 'babel-plugin-relay/macro'
-import { loadQuery, usePreloadedQuery } from 'react-relay'
-import RelayEnvironment from './relay/RelayEnvironment'
-import { AppQuery as AppQueryType } from './__generated__/AppQuery.graphql'
-
-const AppQuery = graphql`
-  query AppQuery {
-    helloWorld
-  }
-`
-
-const preloadedQuery = loadQuery<AppQueryType>(RelayEnvironment, AppQuery, {})
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Post from './pages/Post'
 
 function App() {
-  const data = usePreloadedQuery(AppQuery, preloadedQuery)
-
-  return <>{data.helloWorld}</>
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/post/:id" element={<Post />} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App
