@@ -17,7 +17,7 @@ defmodule MAOWeb.ConnCase do
 
   use ExUnit.CaseTemplate
 
-  alias Ecto.Adpaters.SQL
+  alias Ecto.Adapters.SQL
 
   using do
     quote do

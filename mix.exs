@@ -20,7 +20,7 @@ defmodule MAO.MixProject do
   def application do
     [
       mod: {MAO.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :ex_machina]
     ]
   end
 
@@ -58,7 +58,8 @@ defmodule MAO.MixProject do
       {:absinthe_error_payload, "~> 1.1.3"},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
       {:ecto_psql_extras, "~> 0.2"},
-      {:cors_plug, "~> 2.0"}
+      {:cors_plug, "~> 2.0"},
+      {:ex_machina, "~> 2.7.0"}
     ]
   end
 
