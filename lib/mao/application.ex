@@ -15,7 +15,8 @@ defmodule MAO.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: MAO.PubSub},
       # Start the Endpoint (http/https)
-      MAOWeb.Endpoint
+      MAOWeb.Endpoint,
+      {Absinthe.Subscription, MAOWeb.Endpoint},
       # Start a worker by calling: MAO.Worker.start_link(arg)
       # {MAO.Worker, arg}
     ]

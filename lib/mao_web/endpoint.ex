@@ -1,5 +1,6 @@
 defmodule MAOWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :mao
+  use Absinthe.Phoenix.Endpoint
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
@@ -9,6 +10,10 @@ defmodule MAOWeb.Endpoint do
     key: "_mao_key",
     signing_salt: "588RM8mj"
   ]
+
+  socket "/socket", MAOWeb.UserSocket,
+  websocket: true,
+  longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
@@ -46,6 +51,7 @@ defmodule MAOWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+
   plug CORSPlug
   plug MAOWeb.Router
 end
