@@ -17,7 +17,7 @@ defmodule MAOWeb.Router do
   scope "/api" do
     pipe_through :api
 
-    if Mix.env() == :dev do
+    if Mix.env() == [:dev, :prod] do
       forward "/graphiql", Absinthe.Plug.GraphiQL,
         schema: MAOWeb.Schema,
         socket: MAOWeb.UserSocket
